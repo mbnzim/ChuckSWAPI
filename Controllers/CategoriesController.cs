@@ -11,7 +11,7 @@ using Result = chuckswAPI.Entities.Result;
 namespace chuckswAPI.Controllers
 {
   [ApiController]
-  [Route("chuck")]
+  [Route("chuck/categories")]
   public class CategoriesController : ControllerBase
   {
     private readonly IRepository repository;
@@ -20,9 +20,9 @@ namespace chuckswAPI.Controllers
     {
       this.repository = repository;
     }
-
     //GET /items
     [HttpGet]
+
     public async Task<IEnumerable<CategoryDto>> GetCategoryAsync()
     {
       var categories = (await repository.GetCategoryAsync())

@@ -11,7 +11,7 @@ using Result = chuckswAPI.Entities.Result;
 namespace chuckswAPI.Controllers
 {
   [ApiController]
-  [Route("swapi")]
+  [Route("swapi/people")]
   public class PeopleController : ControllerBase
   {
     private readonly IRepository repository;
@@ -32,49 +32,42 @@ namespace chuckswAPI.Controllers
     [HttpPost]
     public async Task<ActionResult<PeopleDto>> CreatePeopleAsync(PeopleDto peopleDto)
     {
-      ResultDto resultDto = new ResultDto();
       List<Result> peopleList = new List<Result>();
+      int length = peopleDto.resultsDto.Count;
+      int count = 0;
 
-      T CastObject<T>(object input)
-      {
-        return (T)input;
-      }
-
-      T ConvertObject<T>(object input)
-      {
-        return (T)Convert.ChangeType(input, typeof(T));
-      }
-
+      Result resultObt = new Result();
 
       foreach (var person in peopleDto.resultsDto)
       {
-        person.name = peopleDto.resultsDto[0].name;
-        person.height = peopleDto.resultsDto[0].height;
-        person.mass = peopleDto.resultsDto[0].mass;
-        person.hair_color = peopleDto.resultsDto[0].hair_color;
-        person.skin_color = peopleDto.resultsDto[0].skin_color;
-        person.eye_color = peopleDto.resultsDto[0].eye_color;
-        person.birth_year = peopleDto.resultsDto[0].birth_year;
-        person.gender = peopleDto.resultsDto[0].gender;
-        person.homeworld = peopleDto.resultsDto[0].homeworld;
-        person.films = peopleDto.resultsDto[0].films;
-        person.species = peopleDto.resultsDto[0].species;
-        person.vehicles = peopleDto.resultsDto[0].vehicles;
-        person.starships = peopleDto.resultsDto[0].starships;
-        person.created = peopleDto.resultsDto[0].created;
-        person.edited = peopleDto.resultsDto[0].edited;
-        person.url = peopleDto.resultsDto[0].url;
+        if (length > count)
+        {
+          resultObt.name = peopleDto.resultsDto[count].name;
+          resultObt.height = peopleDto.resultsDto[count].height;
+          resultObt.mass = peopleDto.resultsDto[count].mass;
+          resultObt.hair_color = peopleDto.resultsDto[count].hair_color;
+          resultObt.skin_color = peopleDto.resultsDto[count].skin_color;
+          resultObt.eye_color = peopleDto.resultsDto[count].eye_color;
+          resultObt.birth_year = peopleDto.resultsDto[count].birth_year;
+          resultObt.gender = peopleDto.resultsDto[count].gender;
+          resultObt.homeworld = peopleDto.resultsDto[count].homeworld;
+          resultObt.films = peopleDto.resultsDto[count].films;
+          resultObt.species = peopleDto.resultsDto[count].species;
+          resultObt.vehicles = peopleDto.resultsDto[count].vehicles;
+          resultObt.starships = peopleDto.resultsDto[count].starships;
+          resultObt.created = peopleDto.resultsDto[count].created;
+          resultObt.edited = peopleDto.resultsDto[count].edited;
+          resultObt.url = peopleDto.resultsDto[count].url;
 
-        //ConvertObject<Result>(person);
-       //Result r = CastObject<Result>(person);
-        Result r = ConvertObject<Result>(person);
-        peopleList.Add(r);
+          peopleList.Add(resultObt);
+          count++;
+        }
 
       }
 
       People people = new()
       {
-        count = peopleDto.count,
+        count = count,
         next = peopleDto.next,
         previous = peopleDto.previous,
         results = peopleList
@@ -83,6 +76,7 @@ namespace chuckswAPI.Controllers
 
 
       await repository.CreatePeopleAsync(people);
+      //return null;
       return CreatedAtAction(nameof(GetPeopleAsync), people.peopleAsDto());
     }
   }
