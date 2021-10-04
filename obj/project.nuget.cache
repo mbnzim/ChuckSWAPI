@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XTJmSF4mG75xJplQK8LIzijKQbSDwqgOGFLILEb5tQnzaXHpPu93atiwPR3ndnHnB2t1Zm5QAFp89dt3SxEk4g==",
+  "dgSpecHash": "bPD2MlZcxomSsU597x9Qs720ouZp7A6adwxPWK4HyLvKe8nAFWlfv5SMMYrW5szvFV01M9cB9vwchQsN8iE7ng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mbnzi\\Documents\\Jop Application\\SovTech\\ChuckSWAPI\\chuckswAPI\\chuckswAPI.csproj",
+  "projectFilePath": "c:\\Users\\mbnzi\\Documents\\Jop Application\\SovTech\\ChuckSWAPI\\chuckswAPI\\chuckswAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mbnzi\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\mbnzi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
