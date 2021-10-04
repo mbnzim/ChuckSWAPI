@@ -8,11 +8,12 @@ namespace chuckswAPI.Repositories
 {
   public interface IRepository
   {
-
     Task<IEnumerable<Categories>> GetCategoryAsync();
     Task CreateCategoryAsync(Categories categories);
     Task<IEnumerable<People>> GetPeopleAsync();
     Task CreatePeopleAsync(People people);
     Task<IEnumerable<People>> GetPersonAsync(string name);
+
+    Task<IEnumerable<Jokes>> GetJokesAsync(string name);
   }
 }

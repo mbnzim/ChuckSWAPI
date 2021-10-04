@@ -10,24 +10,34 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace chuckswAPI.Controllers
 {
-    [ApiController]
-    [Route("search")]
-    public class SearchController : ControllerBase
+  [ApiController]
+
+  public class SearchController : ControllerBase
+  {
+    private readonly IRepository repository;
+
+    public SearchController(IRepository repository)
     {
-        private readonly IRepository repository;
-
-        public SearchController(IRepository repository)
-        {
-            this.repository = repository;
-        }
-
-        //GET /items
-        [HttpGet]
-        public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
-        {
-            var people = (await repository.GetPersonAsync(name))
-                     .Select(people => people.searchPersonAsDto(name));
-            return people;
-        }
+      this.repository = repository;
     }
+
+    //GET /items
+    [HttpGet]
+    [Route("search/people")]
+    public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
+    {
+      var people = (await repository.GetPersonAsync(name))
+               .Select(people => people.searchPersonAsDto(name));
+      return people;
+    }
+
+    [HttpGet]
+    [Route("search/jokes")]
+    public async Task<IEnumerable<JokesDto>> GetJokesAsync(String name)
+    {
+      var jokes = (await repository.GetJokesAsync(name))
+               .Select(jokes => jokes.searchJokesAsDto(name));
+      return jokes;
+    }
+  }
 }
