@@ -30,8 +30,12 @@ namespace chuckswAPI.Controllers
       var jokes = (await repository.GetJokesAsync(joke))
               .Select(jokes => jokes.searchJokesAsDto(joke));
 
-      return new Tuple<PeopleDto, JokesDto>(people.First(), jokes.First());
-    }
+      if (!String.IsNullOrEmpty(name) && !String.IsNullOrEmpty(joke))
+      {
+        return new Tuple<PeopleDto, JokesDto>(people.First(), jokes.First());
+      }
 
+      return null;
+    }
   }
 }

@@ -23,7 +23,6 @@ namespace chuckswAPI.Controllers
 
         //GET /people
         [HttpGet]
-        [Route("people")]
         public async Task<IEnumerable<PeopleDto>> GetPeopleAsync()
         {
             var people = (await repository.GetPeopleAsync())
@@ -33,7 +32,6 @@ namespace chuckswAPI.Controllers
  
         //Post people
         [HttpPost]
-        [Route("people")]
         public async Task<ActionResult<PeopleDto>> CreatePeopleAsync(PeopleDto peopleDto)
         {
             List<Result> peopleList = new List<Result>();
@@ -80,14 +78,5 @@ namespace chuckswAPI.Controllers
             return CreatedAtAction(nameof(GetPeopleAsync), people.peopleAsDto());
         }
 
-        //GET /items
-        // [HttpGet]
-        // [Route("people/search")]
-        // public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
-        // {
-        //     var people = (await repository.GetPersonAsync(name))
-        //              .Select(people => people.searchPersonAsDto(name));
-        //     return people;
-        // }
     }
 }

@@ -6,12 +6,11 @@ using chuckswAPI.Dtos;
 using chuckswAPI.Entities;
 using chuckswAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Result = chuckswAPI.Entities.Result;
 
 namespace chuckswAPI.Controllers
 {
   [ApiController]
-  [Route("chuck/categories")]
+  [Route("chuck")]
   public class CategoriesController : ControllerBase
   {
     private readonly IRepository repository;
