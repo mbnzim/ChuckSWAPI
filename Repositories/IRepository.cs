@@ -13,5 +13,6 @@ namespace chuckswAPI.Repositories
     Task CreateCategoryAsync(Categories categories);
     Task<IEnumerable<People>> GetPeopleAsync();
     Task CreatePeopleAsync(People people);
+    Task<IEnumerable<People>> GetPersonAsync(string name);
   }
 }

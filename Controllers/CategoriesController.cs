@@ -22,7 +22,6 @@ namespace chuckswAPI.Controllers
     }
     //GET /items
     [HttpGet]
-
     public async Task<IEnumerable<CategoryDto>> GetCategoryAsync()
     {
       var categories = (await repository.GetCategoryAsync())

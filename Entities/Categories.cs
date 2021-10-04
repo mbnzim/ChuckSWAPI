@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace chuckswAPI.Entities
 {
   [BsonIgnoreExtraElements]
-public class Categories
+  public class Categories
   {
     public List<string> categories { get; set; }
   }
