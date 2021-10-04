@@ -22,22 +22,37 @@ namespace chuckswAPI.Controllers
     }
 
     //GET /items
+    // [HttpGet]
+    // [Route("search/people")]
+    // public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
+    // {
+    //   var people = (await repository.GetPersonAsync(name))
+    //            .Select(people => people.searchPersonAsDto(name));
+    //   return people;
+    // }
+
+    // [HttpGet]
+    // [Route("search/jokes")]
+    // public async Task<IEnumerable<JokesDto>> GetJokesAsync(String name)
+    // {
+    //   var jokes = (await repository.GetJokesAsync(name))
+    //            .Select(jokes => jokes.searchJokesAsDto(name));
+    //   return jokes;
+    // }
+
     [HttpGet]
-    [Route("search/people")]
-    public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
+    [Route("search")]
+    public async Task<Tuple<PeopleDto,JokesDto>>GetPersonAsync(String name, String joke)
     {
       var people = (await repository.GetPersonAsync(name))
                .Select(people => people.searchPersonAsDto(name));
-      return people;
+
+      var jokes = (await repository.GetJokesAsync(joke))
+      .Select(jokes => jokes.searchJokesAsDto(joke));
+
+
+      return new Tuple<PeopleDto,JokesDto>(people.First(), jokes.First());
     }
 
-    [HttpGet]
-    [Route("search/jokes")]
-    public async Task<IEnumerable<JokesDto>> GetJokesAsync(String name)
-    {
-      var jokes = (await repository.GetJokesAsync(name))
-               .Select(jokes => jokes.searchJokesAsDto(name));
-      return jokes;
-    }
   }
 }
