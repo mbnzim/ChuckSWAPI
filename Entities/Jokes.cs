@@ -17,5 +17,6 @@ public class Results
 public class Jokes
 {
   public int total { get; set; }
+  public string endpoint { get; set; }
   public List<Results> result { get; set; }
 }

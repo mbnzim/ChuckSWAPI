@@ -15,5 +15,6 @@ public class JokeDetailsDto
 public class JokesDto
 {
   public int total { get; set; }
+  public string endpoint { get; set; }
   public List<JokeDetailsDto> jokeDetailsDto { get; set; }
 }

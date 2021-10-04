@@ -50,11 +50,13 @@ namespace chuckswAPI
         count = people.count,
         next = people.next,
         previous = people.previous,
+        endpoint = null,
         resultsDto = peopleList
+
       };
     }
 
-    //Search pers
+    //Search person
     public static PeopleDto searchPersonAsDto(this People people, string name)
     {
       List<ResultDto> peopleList = new List<ResultDto>();
@@ -94,10 +96,12 @@ namespace chuckswAPI
         count = counter,
         next = people.next,
         previous = people.previous,
+        endpoint = "search/people",
         resultsDto = peopleList
       };
     }
 
+    //Search jokes
     public static JokesDto searchJokesAsDto(this Jokes jokes, string name)
     {
       List<JokeDetailsDto> jokeList = new List<JokeDetailsDto>();
@@ -128,6 +132,7 @@ namespace chuckswAPI
       return new JokesDto
       {
         total = counter,
+        endpoint = "search/jokes",
         jokeDetailsDto = jokeList
       };
     }
