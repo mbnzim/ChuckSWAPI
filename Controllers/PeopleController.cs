@@ -21,7 +21,7 @@ namespace chuckswAPI.Controllers
             this.repository = repository;
         }
 
-        //GET /items
+        //GET /people
         [HttpGet]
         [Route("people")]
         public async Task<IEnumerable<PeopleDto>> GetPeopleAsync()
@@ -30,16 +30,15 @@ namespace chuckswAPI.Controllers
                      .Select(people => people.peopleAsDto());
             return people;
         }
-
+ 
+        //Post people
         [HttpPost]
         [Route("people")]
         public async Task<ActionResult<PeopleDto>> CreatePeopleAsync(PeopleDto peopleDto)
         {
             List<Result> peopleList = new List<Result>();
             int length = peopleDto.resultsDto.Count;
-            int count = 0;
-
-           
+            int count = 0;     
 
             foreach (var person in peopleDto.resultsDto)
             {
@@ -68,7 +67,6 @@ namespace chuckswAPI.Controllers
                 }
 
             }
-
             People people = new()
             {
                 count = count,
@@ -83,13 +81,13 @@ namespace chuckswAPI.Controllers
         }
 
         //GET /items
-        [HttpGet]
-        [Route("people/search")]
-        public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
-        {
-            var people = (await repository.GetPersonAsync(name))
-                     .Select(people => people.searchPersonAsDto(name));
-            return people;
-        }
+        // [HttpGet]
+        // [Route("people/search")]
+        // public async Task<IEnumerable<PeopleDto>> GetPersonAsync(String name)
+        // {
+        //     var people = (await repository.GetPersonAsync(name))
+        //              .Select(people => people.searchPersonAsDto(name));
+        //     return people;
+        // }
     }
 }
