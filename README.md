@@ -38,8 +38,14 @@ ChuckSWAPI is a Backend application that exposes endpoints that can be consumed 
 
 ![image](https://drive.google.com/uc?export=view&id=1dMJtDNeVglCKTV_zSIGkrgQtrDo563BG) 
 
+9. Search using string name and  joke 
 
-![file](https://drive.google.com/uc?export=view&id=QvPc44kKevQXst-X8LD8mQgtsIO5E0P6) 
+![image](https://drive.google.com/uc?export=view&id=1XilPZUrVVNUG6VAJSwuuIvUog217YxSY) 
+
+![image](https://drive.google.com/uc?export=view&id=RVuusmMNkJMSB35aKkRyduN) 
+
+![image](https://drive.google.com/uc?export=view&id=1gIquG1gCEhVzoKE12lvPDBe-_tURGhyC) 
+
 
 
 
