@@ -9,4 +9,4 @@ ChuckSWAPI is a Back end application that expose endpoints, that can be consumed
 5. OpenAPI(Swagger)
 
 # API Endpoints
-![image](https://drive.google.com/file/d/10lyWYGeN06a77yHG11QrLOHLNWK02C_w/view?usp=sharing)
+![image](https://ibb.co/QdVLZvK)
