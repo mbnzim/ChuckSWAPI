@@ -1,5 +1,5 @@
 # Chuck/Swapi/C#
-ChuckSWAPI is a Back end application that expose endpoints, that can be consumed by any front end technology.
+ChuckSWAPI is a Backend application that exposes endpoints that can be consumed by any front end technology.
 
 # Techologies used:
 1. C# .NET Core
@@ -10,3 +10,6 @@ ChuckSWAPI is a Back end application that expose endpoints, that can be consumed
 
 # API Endpoints
 ![image](https://drive.google.com/uc?export=view&id=10lyWYGeN06a77yHG11QrLOHLNWK02C_w) 
+
+# MongoDB database - chuckDB
+![image](https://drive.google.com/uc?export=view&id=19ULSX3lv6tgccFtdCBo9NJoCpIbWXW8M) 
