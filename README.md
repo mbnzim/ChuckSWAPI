@@ -21,7 +21,27 @@ ChuckSWAPI is a Backend application that exposes endpoints that can be consumed 
 3. Install .NET 5.0
 4. Install MongoDB
 5. Connect to MongoDB - mongodb://localhost:27017
+
 ![image](https://drive.google.com/uc?export=view&id=1JJpIXC5Bq7SGybMe6FtYfVimGoH1Wkr9) 
 
-6.  
+6. Run the Application
+
+7. Insert the data on the chuck POST endpoint
+
+![image](https://drive.google.com/uc?export=view&id=1ywUH8Ye3CmJGoEWqi1lqBYpXFUOjebab) 
+
+8. Get the data from the GET chuck endpoint
+
+![image](https://drive.google.com/uc?export=view&id=1KqrwH9hzFo6RZPzQG9lluljqD-IKx7-C) 
+
+9. Get the data from the GET swapi endpoint
+
+![image](https://drive.google.com/uc?export=view&id=1dMJtDNeVglCKTV_zSIGkrgQtrDo563BG) 
+
+
+![file](https://drive.google.com/uc?export=view&id=QvPc44kKevQXst-X8LD8mQgtsIO5E0P6) 
+
+
+
+
 
