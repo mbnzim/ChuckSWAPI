@@ -13,7 +13,6 @@ namespace chuckswAPI.Repositories
     Task<IEnumerable<People>> GetPeopleAsync();
     Task CreatePeopleAsync(People people);
     Task<IEnumerable<People>> GetPersonAsync(string name);
-
     Task<IEnumerable<Jokes>> GetJokesAsync(string name);
   }
 }
